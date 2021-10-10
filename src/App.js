@@ -1,4 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
 import React from "react";
 import Accordion from "./components/Accordion";
 
@@ -17,6 +16,7 @@ const items = [
   },
 ];
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   return (
     <div>
