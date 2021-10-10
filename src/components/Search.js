@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Search = () => {
   const [term, setTerm] = useState("");
 
   useEffect(() => {
-    console.log("i only run once");
+    // method 1
+    // const search = async () => {
+    //   await axios.get("example");
+    // };
+    // search();
+    // method 2
+    // (async () => {
+    //   await axios.get("example");
+    // })();
+    // method 3
+    // axios.get('example')
+    //     .then((response) => {
+    //         console.log(response.data);
+    //     });
   }, [term]);
 
   return (
