@@ -6,10 +6,18 @@ const Search = () => {
 
   useEffect(() => {
     // method 1
-    // const search = async () => {
-    //   await axios.get("example");
-    // };
-    // search();
+    const search = async () => {
+      await axios.get("https://en.wikipedia.org/w/api.php", {
+        params: {
+          action: "query",
+          list: "search",
+          origin: "*",
+          format: "json",
+          srsearch: term,
+        },
+      });
+    };
+    search();
     // method 2
     // (async () => {
     //   await axios.get("example");
