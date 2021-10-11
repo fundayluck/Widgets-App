@@ -19,9 +19,7 @@ const Search = () => {
       });
       setResults(data.query.search);
     };
-    if (term) {
-      search();
-    }
+
     // method 2
     // (async () => {
     //   await axios.get("example");
@@ -31,6 +29,11 @@ const Search = () => {
     //     .then((response) => {
     //         console.log(response.data);
     //     });
+    const timeoutId = setTimeout(() => {
+      if (term) {
+        search();
+      }
+    }, 500);
   }, [term]);
 
   const renderedResults = results.map((result) => {
