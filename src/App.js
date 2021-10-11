@@ -1,6 +1,7 @@
 import React from "react";
 // import Accordion from "./components/Accordion";
-import Search from "./components/Search";
+// import Search from "./components/Search";
+import Dropdown from "./components/Dropdown";
 
 // const items = [
 //   {
@@ -17,11 +18,26 @@ import Search from "./components/Search";
 //   },
 // ];
 
+const options = [
+  {
+    label: "the color Red",
+    value: "Red",
+  },
+  {
+    label: "the color Green",
+    value: "Green",
+  },
+  {
+    label: "the color blue",
+    value: "Blue",
+  },
+];
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   return (
     <div className="ui container">
-      <Search />
+      <Dropdown options={options} />
     </div>
   );
 };
