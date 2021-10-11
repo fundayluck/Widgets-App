@@ -19,21 +19,27 @@ const Search = () => {
       });
       setResults(data.query.search);
     };
-
+    //
     // method 2
     // (async () => {
     //   await axios.get("example");
     // })();
+    //
     // method 3
     // axios.get('example')
     //     .then((response) => {
     //         console.log(response.data);
     //     });
+    //
     const timeoutId = setTimeout(() => {
       if (term) {
         search();
       }
-    }, 500);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [term]);
 
   const renderedResults = results.map((result) => {
