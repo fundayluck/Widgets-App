@@ -1,23 +1,23 @@
 import React, { useState } from "react";
-// import Accordion from "./components/Accordion";
-// import Search from "./components/Search";
+import Accordion from "./components/Accordion";
+import Search from "./components/Search";
 import Dropdown from "./components/Dropdown";
 import Translate from "./components/Translate";
 
-// const items = [
-//   {
-//     title: "Apa itu React?",
-//     content: "React adalah Front End Javascript frameWork",
-//   },
-//   {
-//     title: "kenapa menggunakan React?",
-//     content: "karena saya senang menggunakan framework ini.",
-//   },
-//   {
-//     title: "bagaimana cara menggunakan react?",
-//     content: "menggunakan react dengan membuat component",
-//   },
-// ];
+const items = [
+  {
+    title: "Apa itu React?",
+    content: "React adalah Front End Javascript frameWork",
+  },
+  {
+    title: "kenapa menggunakan React?",
+    content: "karena saya senang menggunakan framework ini.",
+  },
+  {
+    title: "bagaimana cara menggunakan react?",
+    content: "menggunakan react dengan membuat component",
+  },
+];
 
 const options = [
   {
@@ -34,11 +34,38 @@ const options = [
   },
 ];
 
+const ShowAccordion = () => {
+  if (window.location.pathname === "/") {
+    return <Accordion items={items} />;
+  }
+};
+
+const ShowList = () => {
+  if (window.location.pathname === "/list") {
+    return <Search />;
+  }
+};
+
+const ShowColor = () => {
+  if (window.location.pathname === "/color") {
+    return <Dropdown options={options} />;
+  }
+};
+
+const ShowTranslate = () => {
+  if (window.location.pathname === "/translate") {
+    return <Translate />;
+  }
+};
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   return (
     <div>
-      <Translate />
+      {ShowAccordion()}
+      {ShowList()}
+      {ShowColor()}
+      {ShowTranslate()}
     </div>
   );
 };
